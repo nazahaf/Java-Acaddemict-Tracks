@@ -1,0 +1,9 @@
+package com.realdolmen.servlets;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet(urlPatterns = "/HelloNameServlet")
+public class HelloNameServlet extends HttpServlet {
+
+}

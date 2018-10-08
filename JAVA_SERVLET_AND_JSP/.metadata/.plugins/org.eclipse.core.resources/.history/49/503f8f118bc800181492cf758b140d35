@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>My form</title>
+</head>
+<body>
+	<h1>My form</h1>
+	<form method="GET"  action="">
+		<label>Firstname : </label>
+		<input tyepe="text" name="firstName"/>
+		<label>Lastname : </label>
+		<input type="text" name="lastname"/>
+		
+		<input type="submit" value="Submit">
+		<input type="reset" value="reset">
+	</form>
+</body>
+</html>

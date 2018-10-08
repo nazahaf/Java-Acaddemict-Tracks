@@ -1,0 +1,18 @@
+package com.realdolmen.xml.SaxManager;
+
+import org.xml.sax.Attributes;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class MyHandler extends DefaultHandler {
+
+	boolean movieFound, movieFound;
+	public void startElement(String namespaceURI, String localName, String qName, Attributes atts) {
+		if (localName.equals("to"))
+			movieFound = true;
+			else if (foundTo && localName.equals("name"))
+				movieFound = true;	
+	}
+	public void endElement(String namespaceURI, String localName, String qName) {
+		
+	}
+}

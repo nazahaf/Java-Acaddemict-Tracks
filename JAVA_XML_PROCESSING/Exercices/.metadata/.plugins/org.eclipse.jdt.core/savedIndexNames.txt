@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\NAHBJ78\Documents\Java_AcaDDemICT_Track\JAVA_XML_PROCESSING\Exercices\.metadata\.plugins\org.eclipse.jdt.core
+3612876765.index
+4004733329.index

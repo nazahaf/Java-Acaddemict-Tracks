@@ -1,0 +1,7 @@
+package com.realdolmen.servlets;
+
+import javax.servlet.http.HttpServlet;
+
+public class MyFirstServlet extends HttpServlet {
+
+}

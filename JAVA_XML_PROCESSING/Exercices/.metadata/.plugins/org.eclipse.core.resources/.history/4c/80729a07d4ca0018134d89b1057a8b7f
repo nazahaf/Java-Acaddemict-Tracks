@@ -1,0 +1,20 @@
+package com.realdolmen.xml.SaxManager;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+	public static void main( String[] args )
+	{
+		try {
+			SAXParserFactory sf= SAXParserFactory.newInstance();
+			sf.setNamespaceAware(false);
+			SAXParser parser = sf.newSAXParser();
+			parser.parse(new File("email.xml"), new FindTo());
+		}catch (Exception e) {
+			System.out.println("Error " + e.getMessage());
+		}
+	}
+}

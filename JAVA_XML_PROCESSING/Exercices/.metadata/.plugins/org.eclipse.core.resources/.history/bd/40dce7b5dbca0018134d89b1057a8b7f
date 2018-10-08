@@ -1,0 +1,44 @@
+package com.realdolmen.xml.SaxManager;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.xml.sax.Attributes;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class MyHandler extends DefaultHandler {
+
+	private boolean movieFound, typeFound;
+	private Map<String, Integer> hm = new HashMap<String, Integer>();
+	private String tag;
+	
+	public void startElement(String namespaceURI, String localName, String qName, Attributes atts) {
+		if (qName.equals("movie")) {
+			movieFound = true;	
+		}
+		else if (movieFound && qName.equals("type")) {
+			typeFound = true;	
+		}
+	}
+	
+	public void characters(char[] ch, int start, int length) {
+	    tag = new String(ch, start, length);
+		if (typeFound) {
+			if(hm.containsKey(tag)) {
+				hm.put(tag, hm.get(tag)+1 );
+			}
+			else {
+				hm.put(tag, 0);
+			}
+		}
+		
+	}
+	
+	public void endElement(String namespaceURI, String localName, String qName) {
+		if(typeFound && qName.equals("type")) {
+			movieFound = false;
+			typeFound = false;
+			System.out.print("Type : "+tag+" -> "+hm.get(tag));
+		}
+	}
+}

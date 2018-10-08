@@ -1,0 +1,47 @@
+package com.realdolmen.xml.DomManager;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+    	DocumentBuilder db;
+    	Map<String, Integer> hm = new HashMap<String, Integer>();
+		try {
+			db = dbf.newDocumentBuilder();
+			Document d = db.parse(new File(ClassLoader.getSystemResource("movies.xml").toURI()));
+			NodeList nodeMovies = d.getElementsByTagName("movie");
+			for(int i = 0; i<nodeMovies.getLength(); ++i) {
+				Element movie = (Element) nodeMovies.item(i);
+				if(hm.containsKey(tag)) {
+					hm.put(tag, hm.get(tag)+1 );
+				}
+				else {
+					hm.put(tag, 1);
+				}
+				
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		}
+    	
+    }
+}

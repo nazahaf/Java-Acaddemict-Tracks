@@ -1,0 +1,34 @@
+package com.realdolmen.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(urlPatterns = "/MyFirstServlet")
+public class MyFirstServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 1294982659019106232L;
+	
+	private static final String CONTENT_TYPE = "text/html";
+	public void doGet(HttpServletRequest request,
+			HttpServletResponse response)
+					throws ServletException, IOException {
+		response.setContentType(CONTENT_TYPE);
+		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<head><title>Hello World</title></head>");
+		out.println("<body bgcolor=\"#ffffff\">");
+		out.println("<p>Hello World</p>");
+		out.println("</body></html>");
+	}
+
+
+
+
+
+}
